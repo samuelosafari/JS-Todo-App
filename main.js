@@ -4,6 +4,7 @@ let msg = document.getElementById("msg");
 let dateInput = document.getElementById("dateInput");
 let textarea = document.getElementById("textarea");
 let tasks = document.getElementById("tasks");
+let add = document.getElementById("add");
 
 //for dealing with the submit button
 form.addEventListener("submit", (e) => {
@@ -21,6 +22,12 @@ let formValidation = () => {
     console.log("success");
     msg.innerHTML = "";
     acceptData();
+    add.setAttribute("data-bs-dismiss", "modal");
+    add.click();
+
+    (() => {
+      add.setAttribute("data-bs-dismiss", "");
+    })();
   }
 };
 
@@ -50,4 +57,13 @@ let createTasks = () => {
           </span>
         </div>
   `;
+  resetForm();
+};
+
+//reseting the form
+
+let resetForm = () => {
+  textInput.value = "";
+  dateInput.value = "";
+  textarea.value = "";
 };
