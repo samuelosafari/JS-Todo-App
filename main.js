@@ -53,11 +53,17 @@ let createTasks = () => {
           <p>${data.description}</p>
           <span class="options">
             <i class="bx bxs-edit"></i>
-            <i class="bx bx-trash"></i>
+            <i onClick = "deleteTask(this)" class="bx bx-trash"></i>
           </span>
         </div>
   `;
   resetForm();
+};
+
+//deleting a task
+
+let deleteTask = (e) => {
+  e.parentElement.parentElement.remove();
 };
 
 //reseting the form
