@@ -26,7 +26,7 @@
       <h5 class="text-center my-3">Tasks</h5>
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary">Launch demo modal</button>
+      <!-- <button type="button" class="btn btn-primary">Launch demo modal</button> -->
 
       <!-- Modal -->
       <form
@@ -50,6 +50,7 @@
             <div class="modal-body">
               <p>Task Title</p>
               <input class="form-control" type="text" name="" id="textInput" />
+              <div id="msg"></div>
               <br />
               <p>Due Date</p>
               <input class="form-control" type="date" name="" id="dateInput" />
@@ -65,13 +66,13 @@
             </div>
             <div class="modal-footer">
               <button
-                type="submit"
+                type="button"
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary">Add</button>
+              <button type="submit" class="btn btn-primary">Add</button>
             </div>
           </div>
         </div>
