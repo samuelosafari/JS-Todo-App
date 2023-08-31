@@ -52,7 +52,7 @@ let createTasks = () => {
           <span class="small text-secondary">${data.date}</span>
           <p>${data.description}</p>
           <span class="options">
-            <i class="bx bxs-edit"></i>
+            <i onClick = "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="bx bxs-edit"></i>
             <i onClick = "deleteTask(this)" class="bx bx-trash"></i>
           </span>
         </div>
@@ -64,6 +64,18 @@ let createTasks = () => {
 
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove();
+};
+
+//editing a task
+
+let editTask = (e) => {
+  let selectedTask = e.parentElement.parentElement;
+
+  textInput.value = selectedTask.children[0].innerHTML;
+  dateInput.value = selectedTask.children[1].innerHTML;
+  textarea.value = selectedTask.children[2].innerHTML;
+
+  //   selectedTask.remove();
 };
 
 //reseting the form
